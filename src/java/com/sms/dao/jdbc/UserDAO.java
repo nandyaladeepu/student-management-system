@@ -21,8 +21,7 @@ public class UserDAO implements UserDAOI {
                    + " where uname='"+un+"' and pass='"+pwd+"'";  
             PreparedStatement st = con.prepareStatement(sql);
             ResultSet rs = st.executeQuery();  
-            System.out.println("Mohan"+rs.next());
-            System.out.println("Values "+rs.getInt(1));
+            rs.next();
             int count = rs.getInt(1);  
             return (count == 1);  
         } catch (SQLException e) {  
